@@ -356,7 +356,7 @@
         }
       }, 1000);
     }
-    setInterval("get_from_AI('/lux','server')",1000);
+    setInterval("get_from_AI('/lux','server')",5000);
     function AI(){
       /*
       //暫定的にランダムに戻しとく
@@ -387,7 +387,7 @@
       while(!checkothello(i,j,you,othelloObj)){
         i = Math.floor(Math.random()*8);
         j = Math.floor(Math.random()*8);
-        //console.log(i+","+j);
+        console.log(i+","+j);
       }
       var select = get_from_AI('/lux','server');
       var server_place = document.getElementById('server');
@@ -405,7 +405,7 @@
         while(!checkothello(i,j,you,othelloObj)){
           i = Math.floor(Math.random()*8);
           j = Math.floor(Math.random()*8);
-          //console.log(i+","+j);
+          console.log(i+","+j);
         }
       }
     }
