@@ -253,6 +253,12 @@ class Othello0:
                         next_posi = self.alg_sec.get_next_posi(self.diagrams, next_dia_all, next_diaList, self.turnPlayer)
 
                         #AIのnext_posiを送信
+                        next_posi_2 = list(next_posi)
+                        x = columnList[str(next_posi_2[0])]
+                        y = rowList[str(next_posi_2[1])]
+                        send_data  = str(x)+str(y)
+                        with open("selectAI.txt",mode='w')as f:
+                            f.write(send_data)
 
                         if self.vs_count == 1:
                             print(next_posi+"を着手します。")

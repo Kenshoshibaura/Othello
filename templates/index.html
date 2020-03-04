@@ -31,13 +31,13 @@
     }
   </style>
   <script>
-    const get_from_AI = async(url,element,board,turn) => {
+    const get_from_AI = async(url,element) => {
       const select_from_server = await fetch(url)
       .then(response => response.text())
       const target = document.getElementById(element)
       target.innerHTML = `${select_from_server}`
     }
-    const send_for_AI = async(url,element,board,turn) => {
+    const send_for_AI = async(url,element) => {
       console.log("AA")
       const id = document.getElementById(element)
       console.log("BB")
@@ -381,8 +381,8 @@
     }
     console.log("<This is send_board>");
     console.log(send_board);
-    send_for_AI('/lux','server',send_board,2);
-    var select_from_server = get_from_AI('/lux','server',send_board,2);
+    send_for_AI('/lux','server');
+    var select_from_server = get_from_AI('/lux','server');
     console.log('select_from_server:'+select_from_server)
     console.log('cpu:(i,j)=('+i+','+j+')');
     returnOthello(i,j,you);
