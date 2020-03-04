@@ -27,15 +27,19 @@ def update_lux():
         return "failed to write"
     finally:
         f.close()
-@app.route('/lux/2', methods=['GET','POST'])
+@app.route('/pass', methods=['GET','POST'])
 def websocket():
-    time=request.form["time"]
-    lux=request.form["lux"]
+    #time=request.form["time"]
+    #lux=request.form["lux"]
     #select=request.form["lux"]
+    data = request.form[*].value;
+    print(data)
+
     try:
-        print(str(time)+","+str(lux))
+        #print(str(time)+","+str(lux))
         f = open(file_path2,'w')
-        f.write(time+","+ptm)
+        #f.write(time+","+ptm)
+        f.write(data)
         return "succeeded to write"
     except Exception as e:
         print(e)
