@@ -13,6 +13,7 @@ def update_lux():
     lux=request.form["lux"]
     #select=request.form["lux"]
     try:
+        print(str(time)+","+str(lux))
         f = open(file_path,'w')
         f.write(time+","+lux)
         return "succeeded to write"

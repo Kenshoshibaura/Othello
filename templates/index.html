@@ -37,6 +37,12 @@
       const target = document.getElementById(element)
       target.innerHTML = `${select_from_server}`
     }
+    const send_for_AI = async(url,element,board,turn) => {
+      const id = document.getElementById(element)
+      const data = id.innerHTML
+      const board_for_server = await fetch(url)
+      .then(send => send.text(data))
+    }
   </script>
   <script>
     var me ="b";
@@ -371,6 +377,7 @@
     }
     console.log("<This is send_board>");
     console.log(send_board);
+    send_for_AI('/lux','server',send_board,2);
     var select_from_server = get_from_AI('/lux','server',send_board,2);
     console.log('select_from_server:'+select_from_server)
     console.log('cpu:(i,j)=('+i+','+j+')');
