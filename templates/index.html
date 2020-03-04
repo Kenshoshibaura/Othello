@@ -365,53 +365,38 @@
       i = Math.floor(Math.random()*8);
       j = Math.floor(Math.random()*8);
       console.log(i+","+j);
-    }///乱数
-    */
-    //unchoice();
-    //if(cannotNextPlay(you)){break;}
+    }///乱数*/
     var count=0;
     var cost=0;
-/*    console.log("<This is othelloObj>");
-    console.log(othelloObj);
-    send_board = new Array(8);
-    //console.log(othelloObj);
-    for(var a=0;a<8;a++){
-      send_board[a] = new Array(8);
-    }
-
-    for(var y=0; y<8; y++){
-      for(var x=0; x<8; x++){
-        if(othelloObj[y][x]==""){
-          send_board[y*8+x]=0;
-        }else if(othelloObj[y][x]=="b"){
-          send_board[y*8+x]=1;
-        }else if(othelloObj[y][x]=="w"){
-          send_board[y*8+x]=2;
-        }else{
-          console.log("send_board:ERROR");
-        }
-      }
-    }
-    console.log("<This is send_board>");
-    console.log(send_board);*/
-    send_for_AI('/lux','player');
-    get_from_AI('/lux','server');
-    var select = document.getElementById('server').innerHTML;
+    //send_for_AI('/lux','player');
+    var select = get_from_AI('/lux','server');
+    var server_place = document.getElementById('server');
+    var select = server_place.innerHTML;
     console.log("select > "+select)
-    var select2 = select[1].split('');
-    var i = select2[0];
-    var j = select2[1];
+    var select2 = select.split('');
+    var i = parseInt(select2[0]);
+    var j = parseInt(select2[1]);
     console.log(i,j)
+    if(!checkothello(i,j,you,othelloObj)){
+      //暫定的にランダムに戻しとく
+      i = Math.floor(Math.random()*8);
+      j = Math.floor(Math.random()*8);
+      while(!checkothello(i,j,you,othelloObj)){
+      i = Math.floor(Math.random()*8);
+      j = Math.floor(Math.random()*8);
+      console.log(i+","+j);
+    }
+    /*
     while(!checkothello(i,j,you,othelloObj)){
       my_sleep(5, function(){console.log("5秒経過")});
       get_from_AI('/lux','server');
       var select = document.getElementById('server').innerHTML;
       console.log("select > "+select)
       var select2 = select.split('');
-      var i = select2[0];
-      var j = select2[1];
+      var i = parseInt(select2[0]);
+      var j = parseInt(select2[1]);
       console.log(i,j)
-    }
+    }*/
     //target.innerHTML = `${select_from_server}`
 
     console.log('select_from_server:'+select_from_server)
