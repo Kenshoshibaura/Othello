@@ -365,13 +365,7 @@
       var j = parseInt(select2[0]);
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
-        setInterval("get_from_AI('/lux','server');
-        var select = server_place.innerHTML;
-        console.log('select > '+select)
-        var select2 = select.split('');
-        var i = parseInt(select2[1]);
-        var j = parseInt(select2[0]);
-        console.log(i,j)",5000);
+        setInterval("get_from_AI('/lux','server'); var select = server_place.innerHTML; console.log('select > '+select); var select2 = select.split(''); var i = parseInt(select2[1]); var j = parseInt(select2[0]); console.log(i,j)",5000);
       }
       console.log('cpu:(i,j)=('+i+','+j+')');
       returnOthello(i,j,you);
