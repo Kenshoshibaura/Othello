@@ -356,6 +356,7 @@
         }
       }, 1000);
     }
+    setInterval("get_from_AI('/lux','server')",1000);
     function AI(){
       /*
       //暫定的にランダムに戻しとく
@@ -369,7 +370,7 @@
     var count=0;
     var cost=0;
     //send_for_AI('/lux','player');
-    my_sleep(5, function(){console.log("5秒経過")});
+    //my_sleep(5, function(){console.log("5秒経過")});
     var select = get_from_AI('/lux','server');
     var server_place = document.getElementById('server');
     var select = server_place.innerHTML;
@@ -379,14 +380,34 @@
     var j = parseInt(select2[1]);
     console.log(i,j)
     if(!checkothello(i,j,you,othelloObj)){
+      console.log("ERROR:check")
       //暫定的にランダムに戻しとく
       i = Math.floor(Math.random()*8);
       j = Math.floor(Math.random()*8);
       while(!checkothello(i,j,you,othelloObj)){
-      i = Math.floor(Math.random()*8);
-      j = Math.floor(Math.random()*8);
-      console.log(i+","+j);
-    }
+        i = Math.floor(Math.random()*8);
+        j = Math.floor(Math.random()*8);
+        //console.log(i+","+j);
+      }
+      var select = get_from_AI('/lux','server');
+      var server_place = document.getElementById('server');
+      var select = server_place.innerHTML;
+      console.log("select > "+select)
+      var select2 = select.split('');
+      var i = parseInt(select2[0]);
+      var j = parseInt(select2[1]);
+      console.log(i,j)
+      if(!checkothello(i,j,you,othelloObj)){
+        //暫定的にランダムに戻しとく
+        console.log("ERROR:check")
+        i = Math.floor(Math.random()*8);
+        j = Math.floor(Math.random()*8);
+        while(!checkothello(i,j,you,othelloObj)){
+          i = Math.floor(Math.random()*8);
+          j = Math.floor(Math.random()*8);
+          //console.log(i+","+j);
+        }
+      }
     }
     /*
     while(!checkothello(i,j,you,othelloObj)){

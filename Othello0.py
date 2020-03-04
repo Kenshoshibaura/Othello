@@ -6,6 +6,7 @@ import pandas as pd
 import FunctionModules as fm
 import datetime
 import os
+import time
 
 import Algorithm
 from joblib import Parallel, delayed
@@ -259,6 +260,9 @@ class Othello0:
                         send_data  = str(x)+str(y)
                         with open("selectAI.csv",mode='w')as f:
                             f.write("2020/03/01 00:00:00,"+str(send_data))
+                        print("書き込み完了")
+                        time.sleep(5)
+                        print("5秒経過")
 
                         if self.vs_count == 1:
                             print(next_posi+"を着手します。")
