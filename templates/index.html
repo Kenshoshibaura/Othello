@@ -45,12 +45,13 @@
       console.log(data)
       var data2 = "2020/02/22 22:22:22,"+String(data);
       console.log(data2)
+      var url2 = String(url) + "/" + String(data)
       //const board_for_server = await fetch(url)
       //.then(send => send.text(data))
-      await fetch(url)
+      await fetch(url2)
       .then(function(response){
         console.log("RRRRR")
-        return data2;
+        //return data2;
       });
     }
   </script>
@@ -167,7 +168,7 @@
             var player_place = document.getElementById('player');
             player_place.innerHTML = player_select;
 
-            send_for_AI('/pass','player');
+            send_for_AI('/lux','player');
 
             turn=2;
             //othelloObj[i][j]=me;//暫定

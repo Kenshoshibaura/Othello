@@ -27,12 +27,15 @@ def update_lux():
         return "failed to write"
     finally:
         f.close()
-@app.route('/pass', methods=['GET','POST'])
+@app.route('/lux/<name>')
 def websocket():
     #time=request.form["time"]
     #lux=request.form["lux"]
     #select=request.form["lux"]
-    data = request.value;
+    #data = request.value;
+    #print(data)
+    data = name
+    print(name)
     print(data)
 
     try:
