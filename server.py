@@ -30,10 +30,10 @@ def update_lux():
 @app.route('/ptm', methods=['GET','POST'])
 def send_for_AI2():
     time=request.form["time"]
-    ptm=request.form["ptm"]
+    lux=request.form["lux"]
     #select=request.form["lux"]
     try:
-        print(str(time)+","+str(ptm))
+        print(str(time)+","+str(lux))
         f = open(file_path2,'w')
         f.write(time+","+ptm)
         return "succeeded to write"
