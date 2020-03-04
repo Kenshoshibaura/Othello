@@ -35,6 +35,9 @@
       const select_from_server = await fetch(url)
       .then(response => response.text())
       const target = document.getElementById(element)
+      var data = `${select_from_server}`
+      console.log("data > ")
+      console.log(data)
       target.innerHTML = `${select_from_server}`
     }
     const send_for_AI = async(url,element) => {

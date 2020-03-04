@@ -257,8 +257,8 @@ class Othello0:
                         x = columnList[str(next_posi_2[0])]
                         y = rowList[str(next_posi_2[1])]
                         send_data  = str(x)+str(y)
-                        with open("selectAI.txt",mode='w')as f:
-                            f.write(send_data)
+                        with open("selectAI.csv",mode='w')as f:
+                            f.write("2020/03/01 00:00:00,"+str(send_data))
 
                         if self.vs_count == 1:
                             print(next_posi+"を着手します。")
