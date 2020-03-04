@@ -36,10 +36,10 @@
       .then(response => response.text())
       const target = document.getElementById(element)
       var data = `${select_from_server}`
-      var select = str.split(',');
+      var select = data.split(',');
       console.log("select > ")
       console.log(select)
-      var select2 = str.split('');
+      var select2 = select.split('');
       var i = select2[0];
       var j = select2[1];
       console.log(i,j)
