@@ -37,13 +37,14 @@
       const target = document.getElementById(element)
       var data = `${select_from_server}`
       var select = data.split(',');
-      console.log("select > ")
-      console.log(select)
-      var select2 = select[1].split('');
-      var i = select2[0];
-      var j = select2[1];
-      console.log(i,j)
-      target.innerHTML = `${select_from_server}`
+      target.innerHTML = select[1];
+      //console.log("select > ")
+      //console.log(select)
+      //var select2 = select[1].split('');
+      //var i = select2[0];
+      //var j = select2[1];
+      //console.log(i,j)
+      //target.innerHTML = `${select_from_server}`
     }
     const send_for_AI = async(url,element) => {
       console.log("AA")
