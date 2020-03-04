@@ -14,7 +14,7 @@ def update_lux():
     #select=request.form["lux"]
     try:
         f = open(file_path,'w')
-        f.write(lux)
+        f.write(time+","+lux)
         return "succeeded to write"
     except Exception as e:
         print(e)
