@@ -36,8 +36,13 @@
       .then(response => response.text())
       const target = document.getElementById(element)
       var data = `${select_from_server}`
-      console.log("data > ")
-      console.log(data)
+      var select = str.split(',');
+      console.log("select > ")
+      console.log(select)
+      var select2 = str.split('');
+      var i = select2[0];
+      var j = select2[1];
+      console.log(i,j)
       target.innerHTML = `${select_from_server}`
     }
     const send_for_AI = async(url,element) => {
