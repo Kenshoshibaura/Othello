@@ -49,6 +49,7 @@
       //.then(send => send.text(data))
       await fetch(url)
       .then(function(response){
+        console.log("RRRRR")
         return data2;
       });
     }
@@ -166,7 +167,7 @@
             var player_place = document.getElementById('player');
             player_place.innerHTML = player_select;
 
-            send_for_AI('/lux','player');
+            send_for_AI('/lux/2','player');
 
             turn=2;
             //othelloObj[i][j]=me;//暫定
