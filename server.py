@@ -1,3 +1,5 @@
+#server.py
+
 from flask import Flask, request, render_template
 import sys
 import subprocess
@@ -5,7 +7,7 @@ import subprocess
 app = Flask(__name__)
 #file_path = "./select_data.csv"
 file_path = "./selectAI.csv"
-file_path2 = "./selectPR.csv"
+#file_path2 = "./selectPR.csv"
 port_num = 17086
 
 @app.route('/', methods=['GET'])
