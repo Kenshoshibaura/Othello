@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
 import sys
 import subprocess
+import urllib.parse
 app = Flask(__name__)
 #file_path = "./select_data.csv"
 file_path = "./selectAI.csv"
@@ -16,7 +17,6 @@ def get_html():
 def update_lux():
     time=request.form["time"]
     lux=request.form["lux"]
-    #select=request.form["lux"]
     try:
         print(str(time)+","+str(lux))
         f = open(file_path,'w')
@@ -27,22 +27,24 @@ def update_lux():
         return "failed to write"
     finally:
         f.close()
-@app.route('/lux/<name>')
+@app.route('/lux?<text>')
 def websocket():
     #time=request.form["time"]
     #lux=request.form["lux"]
     #select=request.form["lux"]
     #data = request.value;
     #print(data)
-    data = name
-    print(name)
-    print(data)
+    #with app.test_request_context():
+        #print url_for('')
+    #qs = urllib.parse.urlparse(url).query
+    #print(qs)
+    print(text)
 
     try:
         #print(str(time)+","+str(lux))
         f = open(file_path2,'w')
         #f.write(time+","+ptm)
-        f.write(data)
+        f.write(text)
         return "succeeded to write"
     except Exception as e:
         print(e)

@@ -45,7 +45,7 @@
       console.log(data)
       var data2 = "2020/02/22 22:22:22,"+String(data);
       console.log(data2)
-      var url2 = String(url) + "/" + String(data)
+      var url2 = String(url) + "?" + String(data)
       //const board_for_server = await fetch(url)
       //.then(send => send.text(data))
       await fetch(url2)
