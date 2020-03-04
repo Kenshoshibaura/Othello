@@ -1,12 +1,13 @@
 from flask import Flask, request, render_template
+import sys
+import subprocess
 app = Flask(__name__)
 file_path = "./select_data.csv"
 port_num = 17086
 
 @app.route('/', methods=['GET'])
 def get_html():
-    from Othello0 import Othello0
-    Othello0().start()
+    subprocess.Popen([sys.executable,'ss.py'])
     return render_template('./index.html')
 
 @app.route('/lux', methods=['POST'])
