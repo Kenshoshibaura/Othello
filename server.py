@@ -7,21 +7,21 @@ port_num = 17086
 def get_html():
     return render_template('./index.html')
 
-@app.route('/select', methods=['POST'])
+@app.route('/lux', methods=['POST'])
 def update_lux():
-    #time=request.form["time"]
-    #lux=request.form["lux"]
-    select=request.form["select"]
+    time=request.form["time"]
+    lux=request.form["lux"]
+    #select=request.form["lux"]
     try:
         f = open(file_path,'w')
-        f.write(select)
+        f.write(time+","+lux)
         return "succeeded to write"
     except Exception as e:
         print(e)
         return "failed to write"
     finally:
         f.close()
-@app.route('/select',methods=['GET'])
+@app.route('/lux',methods=['GET'])
 def get_lux():
     try:
         f = open(file_path,'r')
