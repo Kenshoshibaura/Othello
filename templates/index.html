@@ -352,7 +352,7 @@
         var x=myscore-yourscore;
       return x;
     }
-    setInterval("get_from_AI('/lux','server')",30000);
+    setInterval("get_from_AI('/lux','server')",10000);
     function AI(){
       var count=0;
       var cost=0;
@@ -366,10 +366,10 @@
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
         setInterval("get_from_AI('/lux','server')",5000);
-        var select = server_place.innerHTML;
-        var select2 = select.split('');
-        var i = parseInt(select2[1]);
-        var j = parseInt(select2[0]);
+        setInterval("select = server_place.innerHTML",5001);
+        setInterval("select2 = select.split('')",5002);
+        setInterval("i = parseInt(select2[1])",5003);
+        setInterval("j = parseInt(select2[0])",5004);
       }
       console.log('cpu:(i,j)=('+i+','+j+')');
       returnOthello(i,j,you);
