@@ -27,8 +27,8 @@ def update_lux():
         return "failed to write"
     finally:
         f.close()
-@app.route('/ptm', methods=['GET','POST'])
-def send_for_AI2():
+@app.route('/websocket', methods=['GET','POST'])
+def websocket():
     time=request.form["time"]
     lux=request.form["lux"]
     #select=request.form["lux"]
