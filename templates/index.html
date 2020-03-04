@@ -42,7 +42,7 @@
       const id = document.getElementById(element)
       console.log("BB")
       const data = id.innerHTML
-      console.log("CC")
+      console.log(data)
       const board_for_server = await fetch(url)
       .then(send => send.text(data))
       console.log("EE")
