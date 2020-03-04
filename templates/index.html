@@ -369,6 +369,7 @@
     var count=0;
     var cost=0;
     //send_for_AI('/lux','player');
+    my_sleep(5, function(){console.log("5秒経過")});
     var select = get_from_AI('/lux','server');
     var server_place = document.getElementById('server');
     var select = server_place.innerHTML;
@@ -400,7 +401,7 @@
     }*/
     //target.innerHTML = `${select_from_server}`
 
-    console.log('select_from_server:'+select_from_server)
+    //console.log('select_from_server:'+select_from_server)
     console.log('cpu:(i,j)=('+i+','+j+')');
     returnOthello(i,j,you);
     turn=1;
