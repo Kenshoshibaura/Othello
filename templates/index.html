@@ -38,13 +38,6 @@
       var data = `${select_from_server}`
       var select = data.split(',');
       target.innerHTML = select[1];
-      //console.log("select > ")
-      //console.log(select)
-      //var select2 = select[1].split('');
-      //var i = select2[0];
-      //var j = select2[1];
-      //console.log(i,j)
-      //target.innerHTML = `${select_from_server}`
     }
     const send_for_AI = async(url,element) => {
       console.log("AA")
@@ -354,7 +347,7 @@
       return x;
     }
     function AI(){
-
+/*
       //暫定的にランダムに戻しとく
       i = Math.floor(Math.random()*8);
       j = Math.floor(Math.random()*8);
@@ -363,11 +356,12 @@
       j = Math.floor(Math.random()*8);
       console.log(i+","+j);
     }///乱数
+    */
     //unchoice();
     //if(cannotNextPlay(you)){break;}
     var count=0;
     var cost=0;
-    console.log("<This is othelloObj>");
+/*    console.log("<This is othelloObj>");
     console.log(othelloObj);
     send_board = new Array(8);
     //console.log(othelloObj);
@@ -389,9 +383,28 @@
       }
     }
     console.log("<This is send_board>");
-    console.log(send_board);
-    send_for_AI('/lux','server');
-    var select_from_server = get_from_AI('/lux','server');
+    console.log(send_board);*/
+    send_for_AI('/lux','player');
+    get_from_AI('/lux','server');
+    var select = document.getElementById('server').innerHTML;
+    console.log("select > ")
+    console.log(select)
+    var select2 = select[1].split('');
+    var i = select2[0];
+    var j = select2[1];
+    console.log(i,j)
+    while(!checkothello(i,j,you,othelloObj)){
+      get_from_AI('/lux','server');
+      var select = document.getElementById('server').innerHTML;
+      console.log("select > ")
+      console.log(select)
+      var select2 = select[1].split('');
+      var i = select2[0];
+      var j = select2[1];
+      console.log(i,j)
+    }
+    //target.innerHTML = `${select_from_server}`
+
     console.log('select_from_server:'+select_from_server)
     console.log('cpu:(i,j)=('+i+','+j+')');
     returnOthello(i,j,you);
@@ -448,7 +461,8 @@
 <body>
   <div>
     <p id="message">あなたは黒です。置く場所を選択してください。</p>
-    <span id="server">2020/02/01 12:00:00,55</span>
+    <span id="server">33</span>
+    <span id="player">33</span>
   </div>
   <div id="othello">
     <table>
