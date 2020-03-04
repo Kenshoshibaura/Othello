@@ -4,6 +4,7 @@ import subprocess
 app = Flask(__name__)
 #file_path = "./select_data.csv"
 file_path = "./selectAI.csv"
+file_path2 = "./selectPR.csv"
 port_num = 17086
 
 @app.route('/', methods=['GET'])
@@ -20,6 +21,21 @@ def update_lux():
         print(str(time)+","+str(lux))
         f = open(file_path,'w')
         f.write(time+","+lux)
+        return "succeeded to write"
+    except Exception as e:
+        print(e)
+        return "failed to write"
+    finally:
+        f.close()
+@app.route('/ptm', methods=['GET','POST'])
+def send_for_AI2():
+    time=request.form["time"]
+    ptm=request.form["ptm"]
+    #select=request.form["lux"]
+    try:
+        print(str(time)+","+str(ptm))
+        f = open(file_path2,'w')
+        f.write(time+","+ptm)
         return "succeeded to write"
     except Exception as e:
         print(e)
