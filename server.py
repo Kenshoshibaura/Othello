@@ -32,7 +32,7 @@ def websocket():
     #time=request.form["time"]
     #lux=request.form["lux"]
     #select=request.form["lux"]
-    data = request.form[*].value;
+    data = request.form[].value;
     print(data)
 
     try:
