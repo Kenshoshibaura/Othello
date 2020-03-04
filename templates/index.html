@@ -374,13 +374,13 @@
     var j = parseInt(select2[0]);
     console.log(i,j)
     while(!checkothello(i,j,you,othelloObj)){
-      setInterval("get_from_AI('/lux','server')",5000);
+      setInterval("get_from_AI('/lux','server')
       var select = server_place.innerHTML;
-      console.log("select > "+select)
+      console.log('select > '+select)
       var select2 = select.split('');
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
-      console.log(i,j)
+      console.log(i,j)",5000);
     }
     //target.innerHTML = `${select_from_server}`
 
