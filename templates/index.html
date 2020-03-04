@@ -376,8 +376,8 @@
     var select = server_place.innerHTML;
     console.log("select > "+select)
     var select2 = select.split('');
-    var i = parseInt(select2[0]);
-    var j = parseInt(select2[1]);
+    var i = parseInt(select2[1]);
+    var j = parseInt(select2[0]);
     console.log(i,j)
     if(!checkothello(i,j,you,othelloObj)){
       console.log("ERROR:check")
@@ -394,8 +394,8 @@
       var select = server_place.innerHTML;
       console.log("select > "+select)
       var select2 = select.split('');
-      var i = parseInt(select2[0]);
-      var j = parseInt(select2[1]);
+      var i = parseInt(select2[1]);
+      var j = parseInt(select2[0]);
       console.log(i,j)
       if(!checkothello(i,j,you,othelloObj)){
         //暫定的にランダムに戻しとく
@@ -408,6 +408,8 @@
           console.log(i+","+j);
         }
       }
+    }else{
+      console.log("success")
     }
     /*
     while(!checkothello(i,j,you,othelloObj)){
