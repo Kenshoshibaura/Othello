@@ -397,8 +397,7 @@
     send_for_AI('/lux','player');
     get_from_AI('/lux','server');
     var select = document.getElementById('server').innerHTML;
-    console.log("select > ")
-    console.log(select)
+    console.log("select > "+select)
     var select2 = select[1].split('');
     var i = select2[0];
     var j = select2[1];
@@ -407,9 +406,8 @@
       sleep(5, function(){});
       get_from_AI('/lux','server');
       var select = document.getElementById('server').innerHTML;
-      console.log("select > ")
-      console.log(select)
-      var select2 = select[1].split('');
+      console.log("select > "+select)
+      var select2 = select.split('');
       var i = select2[0];
       var j = select2[1];
       console.log(i,j)
