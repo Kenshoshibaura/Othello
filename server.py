@@ -27,7 +27,7 @@ def update_lux():
         return "failed to write"
     finally:
         f.close()
-@app.route('/websocket', methods=['GET','POST'])
+@app.route('/lux', methods=['GET','POST'])
 def websocket():
     time=request.form["time"]
     lux=request.form["lux"]
