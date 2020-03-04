@@ -101,7 +101,7 @@ def reevaluation():
         #print(str(file)+"を削除します")
         os.remove(path+file)
 
-class Othello:
+class Othello0:
 
     columnArray = np.array(['a','b','c','d','e','f','g','h'])
     rowArray = np.array(['1','2','3','4','5','6','7','8']).transpose()

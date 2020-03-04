@@ -5,8 +5,8 @@ port_num = 17086
 
 @app.route('/', methods=['GET'])
 def get_html():
-    from Othello import Othello
-    Othello().start()
+    from Othello0 import Othello0
+    Othello0().start()
     return render_template('./index.html')
 
 @app.route('/lux', methods=['POST'])
