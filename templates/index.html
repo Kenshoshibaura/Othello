@@ -346,7 +346,7 @@
         var x=myscore-yourscore;
       return x;
     }
-    function sleep(waitSec, callbackFunc){
+    function my_sleep(waitSec, callbackFunc){
       var spanedSec = 0;
       var id = setInterval(function(){
         spanedSec++;
@@ -403,7 +403,7 @@
     var j = select2[1];
     console.log(i,j)
     while(!checkothello(i,j,you,othelloObj)){
-      sleep(5, function(){});
+      my_sleep(5, function(){console.log("5秒経過")});
       get_from_AI('/lux','server');
       var select = document.getElementById('server').innerHTML;
       console.log("select > "+select)
