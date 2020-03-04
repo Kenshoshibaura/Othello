@@ -159,6 +159,12 @@
         }else{
           if(checkothello(i,j,me,othelloObj)){
             unchoice();
+            var player_select = str(j) + str(i);
+            var player_place = document.getElementById('player');
+            player_place.innerHTML = player_select;
+
+            //send_for_AI('/lux','player');
+
             turn=2;
             //othelloObj[i][j]=me;//暫定
             console.log('player:(i,j)=('+i+','+j+')');
@@ -346,17 +352,7 @@
         var x=myscore-yourscore;
       return x;
     }
-    function my_sleep(waitSec, callbackFunc){
-      var spanedSec = 0;
-      var id = setInterval(function(){
-        spanedSec++;
-        if(spanedSec >= waitSec){
-          clearInterval(id);
-          if(callbackFunc) callbackFunc();
-        }
-      }, 1000);
-    }
-    setInterval("get_from_AI('/lux','server')",5000);
+    setInterval("get_from_AI('/lux','server')",30000);
     function AI(){
       /*
       //暫定的にランダムに戻しとく
@@ -369,8 +365,6 @@
     }///乱数*/
     var count=0;
     var cost=0;
-    //send_for_AI('/lux','player');
-    //my_sleep(5, function(){console.log("5秒経過")});
     var select = get_from_AI('/lux','server');
     var server_place = document.getElementById('server');
     var select = server_place.innerHTML;
@@ -379,49 +373,15 @@
     var i = parseInt(select2[1]);
     var j = parseInt(select2[0]);
     console.log(i,j)
-    if(!checkothello(i,j,you,othelloObj)){
-      console.log("ERROR:check")
-      //暫定的にランダムに戻しとく
-      i = Math.floor(Math.random()*8);
-      j = Math.floor(Math.random()*8);
-      while(!checkothello(i,j,you,othelloObj)){
-        i = Math.floor(Math.random()*8);
-        j = Math.floor(Math.random()*8);
-        console.log(i+","+j);
-      }
-      var select = get_from_AI('/lux','server');
-      var server_place = document.getElementById('server');
+    while(!checkothello(i,j,you,othelloObj)){
+      setInterval("get_from_AI('/lux','server')",5000);
       var select = server_place.innerHTML;
       console.log("select > "+select)
       var select2 = select.split('');
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
       console.log(i,j)
-      if(!checkothello(i,j,you,othelloObj)){
-        //暫定的にランダムに戻しとく
-        console.log("ERROR:check")
-        i = Math.floor(Math.random()*8);
-        j = Math.floor(Math.random()*8);
-        while(!checkothello(i,j,you,othelloObj)){
-          i = Math.floor(Math.random()*8);
-          j = Math.floor(Math.random()*8);
-          console.log(i+","+j);
-        }
-      }
-    }else{
-      console.log("success")
     }
-    /*
-    while(!checkothello(i,j,you,othelloObj)){
-      my_sleep(5, function(){console.log("5秒経過")});
-      get_from_AI('/lux','server');
-      var select = document.getElementById('server').innerHTML;
-      console.log("select > "+select)
-      var select2 = select.split('');
-      var i = parseInt(select2[0]);
-      var j = parseInt(select2[1]);
-      console.log(i,j)
-    }*/
     //target.innerHTML = `${select_from_server}`
 
     //console.log('select_from_server:'+select_from_server)
