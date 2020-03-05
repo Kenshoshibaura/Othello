@@ -374,11 +374,11 @@
         setTimeout(function(){doSomethingLoop(maxCount, ++i)},5000);
       }
     }
-    setInterval("get_from_AI('/lux','server')",10000);
+    setInterval("get_from_AI('/lux','server')",30000);
     function AI(){
       var count=0;
       var cost=0;
-      var select = get_from_AI('/lux','server');
+      setTimeout(get_from_AI('/lux','server'),3000);
       var server_place = document.getElementById('server');
       var select = server_place.innerHTML;
       console.log("select > "+select)
@@ -387,7 +387,7 @@
       var j = parseInt(select2[0]);
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
-        setTimeout(get_from_AI('/lux','server'),5000);
+        setTimeout(get_from_AI('/lux','server'),10000);
         //doSomethingLoop(1,0);
         select = server_place.innerHTML;
         select2 = select.split('');

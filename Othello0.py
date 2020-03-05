@@ -225,7 +225,7 @@ class Othello0:
                         with open("selectPR.txt",mode='r')as f:
                             player_data = f.read()
                             player_data_2 = list(player_data)
-                            print(player_data_2)
+                            #print(player_data_2)
                             print(str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])]))
                             next_posi = str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])])
                         #next_posi = input()#
@@ -239,7 +239,7 @@ class Othello0:
                             with open("selectPR.txt",mode='r')as f:
                                 player_data = f.read()
                                 player_data_2 = list(player_data)
-                                print(player_data_2)
+                                #print(player_data_2)
                                 print(str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])]))
                                 next_posi = str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])])
                             flag, EMsg = fm.next_posi_check(next_posi, next_dia_all, self.turnPlayer)
@@ -273,8 +273,8 @@ class Othello0:
                         with open("selectAI.csv",mode='w')as f:
                             f.write("2020/03/01 00:00:00,"+str(send_data))
                         print("書き込み完了")
-                        time.sleep(5)
-                        print("5秒経過")
+                        #time.sleep(5)
+                        #print("5秒経過")
 
                         if self.vs_count == 1:
                             print(next_posi+"を着手します。")
