@@ -372,12 +372,12 @@
           i = parseInt(select2[1]);
           j = parseInt(select2[0]);
           reload_check = 0;
-          if(!checkothello(i,j,you,othelloObj)){
+          if(checkothello(i,j,you,othelloObj)){
             break;
           }
         }
       }
-      if(checkothello(i,j,you,othelloObj)){
+      if(!checkothello(i,j,you,othelloObj)){
         console.log("ERROR:HAND");
       }
       console.log('cpu:(i,j)=('+i+','+j+')');
