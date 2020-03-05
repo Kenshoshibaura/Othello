@@ -349,6 +349,7 @@
       return x;
     }
     //setInterval("get_from_AI('/lux','server')",30000);
+    /*
     function Check(){
       reload_check = 1;
     }
@@ -384,6 +385,47 @@
       returnOthello(i,j,you);
       turn=1;
       drawObj();
+      */
+    function Check(){
+      reload_check = 1;
+    }
+    function AI(){
+      var count=0;
+      var cost=0;
+      setTimeout(get_from_AI('/lux','server'),3000);
+      var server_place = document.getElementById('server');
+      var select = server_place.innerHTML;
+      console.log("select > "+select);
+      var select2 = select.split('');
+      var i = parseInt(select2[1]);
+      var j = parseInt(select2[0]);
+      console.log(i,j);
+      while(!checkothello(i,j,you,othelloObj)){
+        var promise = new Promise( function (resolve){
+          setTimeout(()=>{
+            get_from_AI('/lux','server');
+          } ,5000); //5秒後に実行
+          setTimeout(()=>{
+            resolve();
+          } ,10000); //10秒後に次の処理へ進む
+        });
+        promise.then(new Promise((resolve)=>{
+          select = server_place.innerHTML;
+          select2 = select.split('');
+          i = parseInt(select2[1]);
+          j = parseInt(select2[0]);
+          reload_check = 0;
+          resolve();
+        }));
+
+      }
+      if(!checkothello(i,j,you,othelloObj)){
+        console.log("ERROR:HAND");
+      }
+      console.log('cpu:(i,j)=('+i+','+j+')');
+      returnOthello(i,j,you);
+      turn=1;
+      drawObj();/**/
       document.getElementById("c"+i+j).style.backgroundColor="#00bfff";
       document.getElementById('message').innerHTML="あなたの番です。";
       if(cannotNextPlay(me)){
