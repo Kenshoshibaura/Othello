@@ -368,7 +368,7 @@
         var x=myscore-yourscore;
       return x;
     }
-    function doSomethingLoop(macCount,i){
+    function doSomethingLoop(maxCount,i){
       if(i <= maxCount){
         get_from_AI('/lux','server');
         setTimeout(function(){doSomethingLoop(maxCount, ++i)},5000);
