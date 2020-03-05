@@ -47,9 +47,9 @@ def get_lux():
 
 @app.route('/lux/00',methods=['GET'])
 def get_lux00():
-    select_player = 00
+    #select_player = 00
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("00")
     f.close()
     #print(select_player)
     #print("00")
@@ -65,9 +65,9 @@ def get_lux00():
         return select
 @app.route('/lux/01',methods=['GET'])
 def get_lux01():
-    select_player = 01
+    #select_player = 01
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("01")
     f.close()
     #print(select_player)
     #print("01")
@@ -83,9 +83,9 @@ def get_lux01():
         return select
 @app.route('/lux/02',methods=['GET'])
 def get_lux02():
-    select_player = 02
+    #select_player = 02
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("02")
     f.close()
     #print(select_player)
     #print("02")
@@ -101,9 +101,9 @@ def get_lux02():
         return select
 @app.route('/lux/03',methods=['GET'])
 def get_lux03():
-    select_player = 03
+    #select_player = 03
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("03")
     f.close()
     #print(select_player)
     #print("03")
@@ -119,9 +119,9 @@ def get_lux03():
         return select
 @app.route('/lux/04',methods=['GET'])
 def get_lux04():
-    select_player = 04
+    #select_player = 04
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("04")
     f.close()
     #print(select_player)
     #print("04")
@@ -137,9 +137,9 @@ def get_lux04():
         return select
 @app.route('/lux/05',methods=['GET'])
 def get_lux05():
-    select_player = 05
+    #select_player = 05
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("05")
     f.close()
     #print(select_player)
     #print("05")
@@ -155,9 +155,9 @@ def get_lux05():
         return select
 @app.route('/lux/06',methods=['GET'])
 def get_lux06():
-    select_player = 06
+    #select_player = 06
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("06")
     f.close()
     #print(select_player)
     #print("06")
@@ -173,9 +173,9 @@ def get_lux06():
         return select
 @app.route('/lux/07',methods=['GET'])
 def get_lux07():
-    select_player = 07
+    #select_player = 07
     f = open(file_path2,'w')
-    f.write(str(select_player))
+    f.write("07")
     f.close()
     #print(select_player)
     #print("07")
