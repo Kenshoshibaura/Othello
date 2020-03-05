@@ -6,7 +6,6 @@ import pandas as pd
 import FunctionModules as fm
 import datetime
 import os
-
 import Algorithm
 from joblib import Parallel, delayed
 
