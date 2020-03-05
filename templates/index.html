@@ -381,11 +381,22 @@
       var j = parseInt(select2[0]);
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
-        setInterval("get_from_AI('/lux','server')",5000);
-        setInterval("select = server_place.innerHTML",5001);
-        setInterval("select2 = select.split('')",5002);
-        setInterval("i = parseInt(select2[1])",5003);
-        setInterval("j = parseInt(select2[0])",5004);
+        function doSomethingLoop(macCount,i){
+          if(i <= maxCount){
+            get_from_AI('/lux','server');
+            select = server_place.innerHTML;
+            select2 = select.split('');
+            i = parseInt(select2[1]);
+            j = parseInt(select2[0]);
+            setTimeout(function(){doSomethingLoop(maxCount, ++i)},5000);
+          }
+        }
+        doSomethingLoop(1,0);
+        //setInterval("get_from_AI('/lux','server')",5000);
+        //setInterval("select = server_place.innerHTML",5001);
+        //setInterval("select2 = select.split('')",5002);
+        //setInterval("i = parseInt(select2[1])",5003);
+        //setInterval("j = parseInt(select2[0])",5004);
       }
       console.log('cpu:(i,j)=('+i+','+j+')');
       returnOthello(i,j,you);

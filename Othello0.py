@@ -233,7 +233,7 @@ class Othello0:
                             break
                         flag, EMsg = fm.next_posi_check(next_posi, next_dia_all, self.turnPlayer)
                         while flag == False:
-                            print(EMsg)
+                            #print(EMsg)
                             print("入力待機中...")
                             time.sleep(5)
                             with open("selectPR.txt",mode='r')as f:
