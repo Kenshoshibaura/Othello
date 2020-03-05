@@ -42,17 +42,6 @@
       target.innerHTML = select[1];
       reload_check = 0;
     }
-    /*
-    //こっちは調べながら書いた動いてない
-    const send_for_AI = async(url,element) => {
-      const id = document.getElementById(element)
-      const data = id.innerHTML;
-      console.log(data);
-      await fetch(url)
-      .then(function(response){
-        return data;
-      });
-    }*/
     const send_for_AI_2 = async(url,element) => {
       const target = document.getElementById(element)
       var data = target.innerHTML;
@@ -62,17 +51,17 @@
       .then(response => response.text())
       var response2 = `${return_from_server}`
       console.log(response2);
-
     }
   </script>
   <script>
     var me ="b";
-    var you="w"
+    var you="w";
     var table; //
     var othelloObj; //
     var sum;
     var turn=2;
     var cannnotPlay= 0;
+    /*
     var optimal=[['30','-12','0','-1','-1','0','-12','30'],
                  ['-12','-15','-3','-3','-3','-3','-15','-12'],
                  ['0','-3','0','-1','-1','0','-3','0'],
@@ -81,6 +70,7 @@
                  ['0','-3','0','-1','-1','0','-3','0'],
                  ['-12','-15','-3','-3','-3','-3','-15','-12'],
                  ['30','-12','0','-1','-1','0','-12','30']]
+                 */
     window.onload =function(){
       //unchoice();
       getElements();
@@ -364,11 +354,11 @@
       setTimeout(get_from_AI('/lux','server'),3000);
       var server_place = document.getElementById('server');
       var select = server_place.innerHTML;
-      console.log("select > "+select)
+      console.log("select > "+select);
       var select2 = select.split('');
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
-      console.log(i,j)
+      console.log(i,j);
       /*
       while(!checkothello(i,j,you,othelloObj)){
         setTimeout(get_from_AI('/lux','server'),10000);
@@ -392,7 +382,7 @@
         }
       }
       if(!checkothello(i,j,you,othelloObj)){
-        console.log("ERROR:HAND")
+        console.log("ERROR:HAND");
       }
       console.log('cpu:(i,j)=('+i+','+j+')');
       returnOthello(i,j,you);
