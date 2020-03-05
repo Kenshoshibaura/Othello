@@ -387,7 +387,8 @@
       var j = parseInt(select2[0]);
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
-        doSomethingLoop(2,0);
+        setTimeout(get_from_AI('/lux','server'),5000);
+        //doSomethingLoop(1,0);
         select = server_place.innerHTML;
         select2 = select.split('');
         i = parseInt(select2[1]);
