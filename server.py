@@ -493,6 +493,8 @@ def get_lux41():
         return select
 @app.route('/lux/42',methods=['GET'])
 def get_lux42():
+    select_player = 42
+    print(select_player)
     print("42")
     try:
         f = open(file_path,'r')
@@ -873,6 +875,8 @@ def get_lux76():
         return select
 @app.route('/lux/77',methods=['GET'])
 def get_lux77():
+    select_player = 77
+    print(select_player)
     print("77")
     try:
         f = open(file_path,'r')
