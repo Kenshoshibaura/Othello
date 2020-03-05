@@ -495,7 +495,7 @@ def get_lux41():
 def get_lux42():
     select_player = 42
     f = open(file_path2,'w')
-    f.write(select_player)
+    f.write(str(select_player))
     f.close()
     print(select_player)
     print("42")
