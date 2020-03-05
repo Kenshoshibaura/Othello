@@ -80,144 +80,144 @@ def get_lux11():
 def get_lux12():
     print("12")
 @app.route('/lux/13',methods=['GET'])
-def get_lux1():
+def get_lux13():
     print("13")
 @app.route('/lux/14',methods=['GET'])
-def get_lux1():
+def get_lux14():
     print("14")
 @app.route('/lux/15',methods=['GET'])
-def get_lux1():
+def get_lux15():
     print("15")
 @app.route('/lux/16',methods=['GET'])
-def get_lux1():
+def get_lux16():
     print("16")
 @app.route('/lux/17',methods=['GET'])
-def get_lux1():
+def get_lux17():
     print("17")
 
 @app.route('/lux/20',methods=['GET'])
-def get_lux2():
+def get_lux20():
     print("20")
 @app.route('/lux/21',methods=['GET'])
-def get_lux2():
+def get_lux21():
     print("21")
 @app.route('/lux/22',methods=['GET'])
-def get_lux2():
+def get_lux22():
     print("22")
 @app.route('/lux/23',methods=['GET'])
-def get_lux2():
+def get_lux23():
     print("23")
 @app.route('/lux/24',methods=['GET'])
-def get_lux2():
+def get_lux24():
     print("24")
 @app.route('/lux/25',methods=['GET'])
-def get_lux2():
+def get_lux25():
     print("25")
 @app.route('/lux/26',methods=['GET'])
-def get_lux2():
+def get_lux26():
     print("26")
 @app.route('/lux/27',methods=['GET'])
-def get_lux2():
+def get_lux27():
     print("27")
 
 @app.route('/lux/30',methods=['GET'])
-def get_lux3():
+def get_lux30():
     print("30")
 @app.route('/lux/31',methods=['GET'])
-def get_lux3():
+def get_lux31():
     print("31")
 @app.route('/lux/32',methods=['GET'])
-def get_lux3():
+def get_lux32():
     print("32")
 @app.route('/lux/33',methods=['GET'])
-def get_lux3():
+def get_lux33():
     print("33")
 @app.route('/lux/34',methods=['GET'])
-def get_lux3():
+def get_lux34():
     print("34")
 @app.route('/lux/35',methods=['GET'])
-def get_lux3():
+def get_lux35():
     print("35")
 @app.route('/lux/36',methods=['GET'])
-def get_lux3():
+def get_lux36():
     print("36")
 @app.route('/lux/37',methods=['GET'])
-def get_lux3():
+def get_lux37():
     print("37")
 
 @app.route('/lux/40',methods=['GET'])
-def get_lux4():
+def get_lux40():
     print("40")
 @app.route('/lux/41',methods=['GET'])
-def get_lux4():
+def get_lux41():
     print("41")
 @app.route('/lux/42',methods=['GET'])
-def get_lux4():
+def get_lux42():
     print("42")
 @app.route('/lux/43',methods=['GET'])
-def get_lux4():
+def get_lux43():
     print("43")
 @app.route('/lux/44',methods=['GET'])
-def get_lux4():
+def get_lux44():
     print("44")
 @app.route('/lux/45',methods=['GET'])
-def get_lux4():
+def get_lux45():
     print("45")
 @app.route('/lux/46',methods=['GET'])
-def get_lux4():
+def get_lux46():
     print("46")
 @app.route('/lux/47',methods=['GET'])
-def get_lux4():
+def get_lux47():
     print("47")
 
 @app.route('/lux/50',methods=['GET'])
-def get_lux5():
+def get_lux50():
     print("50")
 @app.route('/lux/51',methods=['GET'])
-def get_lux5():
+def get_lux51():
     print("51")
 @app.route('/lux/52',methods=['GET'])
-def get_lux5():
+def get_lux52():
     print("52")
 @app.route('/lux/53',methods=['GET'])
-def get_lux5():
+def get_lux53():
     print("53")
 @app.route('/lux/54',methods=['GET'])
-def get_lux5():
+def get_lux54():
     print("54")
 @app.route('/lux/55',methods=['GET'])
-def get_lux5():
+def get_lux55():
     print("55")
 @app.route('/lux/56',methods=['GET'])
-def get_lux5():
+def get_lux56():
     print("56")
 @app.route('/lux/57',methods=['GET'])
-def get_lux5():
+def get_lux57():
     print("57")
 
 @app.route('/lux/60',methods=['GET'])
-def get_lux6():
+def get_lux60():
     print("60")
 @app.route('/lux/61',methods=['GET'])
-def get_lux6():
+def get_lux61():
     print("61")
 @app.route('/lux/62',methods=['GET'])
-def get_lux6():
+def get_lux62():
     print("62")
 @app.route('/lux/63',methods=['GET'])
-def get_lux6():
+def get_lux63():
     print("63")
 @app.route('/lux/64',methods=['GET'])
-def get_lux6():
+def get_lux64():
     print("64")
 @app.route('/lux/65',methods=['GET'])
-def get_lux6():
+def get_lux65():
     print("65")
 @app.route('/lux/66',methods=['GET'])
-def get_lux6():
+def get_lux66():
     print("66")
 @app.route('/lux/67',methods=['GET'])
-def get_lux6():
+def get_lux67():
     print("67")
 
 @app.route('/lux/70',methods=['GET'])
