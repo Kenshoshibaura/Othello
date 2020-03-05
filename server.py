@@ -34,7 +34,8 @@ def update_lux():
         f.close()
 @app.route('/lux',methods=['GET'])
 def get_lux():
-    print("get_lux")
+    #print("get_lux")
+    time.sleep(1)
     try:
         f = open(file_path,'r')
         for row in f:
