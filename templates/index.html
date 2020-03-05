@@ -36,7 +36,7 @@
     const get_from_AI = async(url,element) => {
       const select_from_server = await fetch(url)
       .then(response => response.text())
-      const target = document.getElementById(element)
+      const target = document.getElementById(element);
       var data = `${select_from_server}`
       var select = data.split(',');
       target.innerHTML = select[1];
@@ -348,6 +348,9 @@
       return x;
     }
     //setInterval("get_from_AI('/lux','server')",30000);
+    function Check(){
+      reload_check = 1;
+    }
     function AI(){
       var count=0;
       var cost=0;
@@ -359,16 +362,8 @@
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
       console.log(i,j);
-      /*
-      while(!checkothello(i,j,you,othelloObj)){
-        setTimeout(get_from_AI('/lux','server'),10000);
-        select = server_place.innerHTML;
-        select2 = select.split('');
-        i = parseInt(select2[1]);
-        j = parseInt(select2[0]);
-      }*/
       for(var t=0; t<20; t++){
-        setTimeout("reload_check = 1",5000);
+        setTimeout(Check(),5000);
         if(reload_check == 1){
           setTimeout(get_from_AI('/lux','server'),10000);
           select = server_place.innerHTML;
