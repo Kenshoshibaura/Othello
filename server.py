@@ -7,7 +7,7 @@ import subprocess
 app = Flask(__name__)
 #file_path = "./select_data.csv"
 file_path = "./selectAI.csv"
-file_path2 = "./selectPR.csv"
+file_path2 = "./selectPR.txt"
 port_num = 17086
 
 @app.route('/', methods=['GET'])
@@ -494,6 +494,9 @@ def get_lux41():
 @app.route('/lux/42',methods=['GET'])
 def get_lux42():
     select_player = 42
+    f = open(file_path2,'w')
+    f.write(select_player)
+    f.close()
     print(select_player)
     print("42")
     try:
