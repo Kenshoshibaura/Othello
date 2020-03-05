@@ -368,6 +368,12 @@
         var x=myscore-yourscore;
       return x;
     }
+    function doSomethingLoop(macCount,i){
+      if(i <= maxCount){
+        get_from_AI('/lux','server');
+        setTimeout(function(){doSomethingLoop(maxCount, ++i)},5000);
+      }
+    }
     setInterval("get_from_AI('/lux','server')",10000);
     function AI(){
       var count=0;
@@ -381,17 +387,11 @@
       var j = parseInt(select2[0]);
       console.log(i,j)
       while(!checkothello(i,j,you,othelloObj)){
-        function doSomethingLoop(macCount,i){
-          if(i <= maxCount){
-            get_from_AI('/lux','server');
-            select = server_place.innerHTML;
-            select2 = select.split('');
-            i = parseInt(select2[1]);
-            j = parseInt(select2[0]);
-            setTimeout(function(){doSomethingLoop(maxCount, ++i)},5000);
-          }
-        }
-        doSomethingLoop(1,0);
+        doSomethingLoop(2,0);
+        select = server_place.innerHTML;
+        select2 = select.split('');
+        i = parseInt(select2[1]);
+        j = parseInt(select2[0]);
         //setInterval("get_from_AI('/lux','server')",5000);
         //setInterval("select = server_place.innerHTML",5001);
         //setInterval("select2 = select.split('')",5002);
