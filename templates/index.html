@@ -43,12 +43,23 @@
     //こっちは調べながら書いた動いてない
     const send_for_AI = async(url,element) => {
       const id = document.getElementById(element)
-      const data = id.innerHTML
-      console.log(data)
+      const data = id.innerHTML;
+      console.log(data);
       await fetch(url)
       .then(function(response){
         return data;
       });
+    }
+    const send_for_AI_2 = async(url,element) => {
+      const target = document.getElementById(element)
+      var data = target.innerHTML;
+      var url2 = String(url) + "/" + String(data);
+      console.log(url2);
+      const return_from_server = await fetch(url2)
+      .then(response => response.text())
+      var response2 = `${return_from_server}`
+      console.log(response2);
+
     }
   </script>
   <script>
@@ -168,7 +179,7 @@
             //var file = fs.CreateTextFile("selectPR.txt");
             //file.Write(player_select);
             //file.Close();
-            send_for_AI('/lux','player');
+            send_for_AI_2('/lux','player');
 
             turn=2;
             //othelloObj[i][j]=me;//暫定
