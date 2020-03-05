@@ -363,7 +363,7 @@
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
       console.log(i,j);
-      for(var t=0; t<20; t++){
+      while(!checkothello(i,j,you,othelloObj)){
         setTimeout(Check(),5000);
         if(reload_check == 1){
           setTimeout(get_from_AI('/lux','server'),10000);
