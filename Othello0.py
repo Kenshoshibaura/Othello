@@ -227,14 +227,21 @@ class Othello0:
                             player_data_2 = list(player_data)
                             print(player_data_2)
                             print(str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])]))
-
-                        next_posi = input()#
+                            next_posi = str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])])
+                        #next_posi = input()#
                         if next_posi == 'quit':
                             break
                         flag, EMsg = fm.next_posi_check(next_posi, next_dia_all, self.turnPlayer)
                         while flag == False:
                             print(EMsg)
-                            next_posi = input()
+                            print("入力待機中...")
+                            time.sleep(5)
+                            with open("selectPR.txt",mode='r')as f:
+                                player_data = f.read()
+                                player_data_2 = list(player_data)
+                                print(player_data_2)
+                                print(str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])]))
+                                next_posi = str(Inv_columnList[int(player_data_2[0])])+str(Inv_rowList[int(player_data_2[1])])
                             flag, EMsg = fm.next_posi_check(next_posi, next_dia_all, self.turnPlayer)
                     else:
                         next_posi = self.alg_fir.get_next_posi(self.diagrams, next_dia_all, next_diaList, self.turnPlayer)
