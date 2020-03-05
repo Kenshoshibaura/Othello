@@ -225,7 +225,7 @@ class Othello0:
                         with open("selectPR.txt",mode='r')as f:
                             player_data = f.read()
                             player_data_2 = list(player_data)
-                            print(str(Inv_columnList[player_data_2[0]])+str(Inv_rowList[player_data_2[1]]))
+                            print(str(Inv_columnList[(player_data_2[0])])+str(Inv_rowList[(player_data_2[1])]))
 
                         next_posi = input()#
                         if next_posi == 'quit':
