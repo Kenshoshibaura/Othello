@@ -223,7 +223,7 @@ class Othello0:
 
                         #playerのnext_posiを取得する
                         with open("selectPR.txt",mode='r')as f:
-                            player_data = y.read()
+                            player_data = f.read()
                             player_data_2 = list(player_data)
                             print(str(Inv_columnList[player_data_2[0]])+str(Inv_rowList[player_data_2[1]]))
 
