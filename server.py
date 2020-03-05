@@ -12,11 +12,13 @@ port_num = 17086
 
 @app.route('/', methods=['GET'])
 def get_html():
+    print("get_html")
     subprocess.Popen([sys.executable,'ss.py'])
     return render_template('./index.html')
 
 @app.route('/lux', methods=['POST'])
 def update_lux():
+    print("update_lux")
     time=request.form["time"]
     lux=request.form["lux"]
     try:
@@ -31,6 +33,7 @@ def update_lux():
         f.close()
 @app.route('/lux',methods=['GET'])
 def get_lux():
+    print("get_lux")
     try:
         f = open(file_path,'r')
         for row in f:
