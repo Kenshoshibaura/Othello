@@ -35,21 +35,21 @@
     const get_from_AI = async(url,element) => {
       const select_from_server = await fetch(url)
       .then(response => response.text())
-      const target = document.getElementById(element);
+      const target = document.getElementById(element)
       var data = `${select_from_server}`
-      var select = data.split(',');
-      target.innerHTML = select[1];
-      reload_check = 0;
+      var select = data.split(',')
+      target.innerHTML = select[1]
+      reload_check = 0
     }
     const send_for_AI_2 = async(url,element) => {
       const target = document.getElementById(element)
-      var data = target.innerHTML;
-      var url2 = String(url) + "/" + String(data);
-      console.log(url2);
+      var data = target.innerHTML
+      var url2 = String(url) + "/" + String(data)
+      console.log(url2)
       const return_from_server = await fetch(url2)
       .then(response => response.text())
       var response2 = `${return_from_server}`
-      console.log(response2);
+      console.log(response2)
     }
   </script>
   <script>
@@ -347,8 +347,7 @@
         var x=myscore-yourscore;
       return x;
     }
-    //setInterval("get_from_AI('/lux','server')",30000);
-    /*
+
     function Check(){
       reload_check = 1;
     }
@@ -363,28 +362,66 @@
       var i = parseInt(select2[1]);
       var j = parseInt(select2[0]);
       console.log(i,j);
-      while(!checkothello(i,j,you,othelloObj)){
-        setTimeout(Check(),5000);
-        if(reload_check == 1){
-          setTimeout(get_from_AI('/lux','server'),10000);
+      //*ここから下をPromise形式にする為に、while文をif文に変えた*
+      if(!checkothello(i,j,you,othelloObj)){
+
+        console.log("While check Othello")
+        var promise = new Promise( function (resolve){
+          var a = setInterval(()=>{
+            console.warn("/lux");
+            get_from_AI('/lux','server');
+          } ,1000); //1秒後に実行
+          var b= setInterval(()=>{
+            console.warn("resolve");
+            console.log(a);
+            console.log(b);
+            if(!checkothello(i,j,you,othelloObj)){
+              clearTimeout(a);
+              clearTimeout(b);
+              resolve();
+            }
+          } ,2000); //2秒後に次の処理へ進む
+        })
+        promise.then(()=>{ //上のpromiseが終わったら以下を実行
           select = server_place.innerHTML;
           select2 = select.split('');
           i = parseInt(select2[1]);
           j = parseInt(select2[0]);
-          reload_check = 0;
-          if(checkothello(i,j,you,othelloObj)){
-            break;
+          //*ここからコメントアウト部移植
+          if(!checkothello(i,j,you,othelloObj)){
+            console.log("ERROR:HAND");
           }
-        }
+          console.log('cpu:(i,j)=('+i+','+j+')');
+          returnOthello(i,j,you);
+          turn=1;
+          drawObj();
+          document.getElementById("c"+i+j).style.backgroundColor="#00bfff";
+          document.getElementById('message').innerHTML="あなたの番です。";
+          if(cannotNextPlay(me)){
+            if(cannotNextPlay(you)){
+              judge();
+            }else{
+              turn=2;
+              alert("あなたはどこにも置くことが出来ません(-_-)zzz");
+              AI();
+            }
+          }else if(turn==1){
+            choice();
+          }
+          //*ここまで移植部分
+          resolve();
+        });
+
       }
       if(!checkothello(i,j,you,othelloObj)){
         console.log("ERROR:HAND");
       }
-      console.log('cpu:(i,j)=('+i+','+j+')');
-      returnOthello(i,j,you);
-      turn=1;
-      drawObj();
-      */
+    }
+
+
+
+
+/*
     function Check(){
       reload_check = 1;
     }
@@ -424,7 +461,7 @@
       console.log('cpu:(i,j)=('+i+','+j+')');
       returnOthello(i,j,you);
       turn=1;
-      drawObj();/**/
+      drawObj();
       document.getElementById("c"+i+j).style.backgroundColor="#00bfff";
       document.getElementById('message').innerHTML="あなたの番です。";
       if(cannotNextPlay(me)){
@@ -439,6 +476,7 @@
         choice();
       }
     }
+*/
     function cannotNextPlay(nextCol){
       for(var i=0;i<8;i++){
         for(var j=0;j<8;j++){
